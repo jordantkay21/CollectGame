@@ -1,0 +1,21 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+## [0.2.0] - 02/04/2025
+### Added
+- Implemented auto-initialization for DebugLogger.
+
+### Fixed
+- Fixed issue where DebugTag name was not resetting after creation.
+- Resolved color reset bug in DebugSettingsEditor.
+
+### Changed
+- Improved DebugSettings auto-detection on startup.
+- Optimized logging performance.
+
+## [0.1.0] - 02/03/2025
+### Added
+- Initial release of Debug Package.
+- Supports Debug Levels: Verbose, Info, Warning, Error.
+- Debug Tags system with color coding.
+- DebugSettingsEditor for UI-based configuration.
