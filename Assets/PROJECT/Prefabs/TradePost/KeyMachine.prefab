@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5004768524284602504}
   - component: {fileID: 2556746771099927721}
   - component: {fileID: 112464637924588335}
-  - component: {fileID: 4067974997091097841}
   m_Layer: 31
   m_Name: KeyMachine
   m_TagString: Untagged
@@ -112,22 +111,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 10d475a0f15b31443aa032c25648465b, type: 3}
---- !u!114 &4067974997091097841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4012754042502696978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 911af4d9c8748bc48bad6a343163b3a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemToGive: 1
-  amountToGive: 1
-  itemToTake: 0
-  amountToTake: 100
 --- !u!1 &6547915999169092353
 GameObject:
   m_ObjectHideFlags: 0
