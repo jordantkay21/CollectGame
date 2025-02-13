@@ -1,19 +1,21 @@
+using System;
 using UnityEngine;
 
-namespace KayosStudios.TBD.Player.Input
+namespace KayosStudios.TBD.Player.Inputs
 {
     public class InputManager : MonoBehaviour
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        [SerializeField] KeyCode interactKey = KeyCode.E;
+
+        public static event Action OnInteractPressed;
+
+        private void Update()
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            if (Input.GetKeyDown(interactKey))
+            {
+                DebugLogger.Log("PlayerInput", $"Player Pressed Interaction Key {interactKey}");
+                OnInteractPressed?.Invoke();
+            }
         }
     }
 }

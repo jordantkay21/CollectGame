@@ -1,16 +1,14 @@
+using KayosManager.TBD.Interactions;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Button : MonoBehaviour
+public class Button : MonoBehaviour, IInteractable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public UnityEvent OnButtonPress;
 
-    // Update is called once per frame
-    void Update()
+    public void Interact()
     {
-        
+        DebugLogger.Log("Button", "Button Pressed!", DebugLevel.Verbose);
+        OnButtonPress?.Invoke();
     }
 }
