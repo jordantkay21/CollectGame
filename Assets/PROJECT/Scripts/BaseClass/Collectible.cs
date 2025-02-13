@@ -2,18 +2,46 @@ using UnityEngine;
 
 namespace KayosStudios.TBD.Inventory.Collectible
 {
-    public class Collectible : MonoBehaviour
+    [RequireComponent(typeof(SphereCollider))]
+    public abstract class Collectible<T,TData> : MonoBehaviour where T : Collectible<T, TData>
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
+        [SerializeField] float collisionRadius;
+        protected SphereCollider sphereCollider;
 
+
+
+        protected virtual void Awake()
+        {
+            InitSphereCollider();
         }
 
-        // Update is called once per frame
-        void Update()
+        private void OnTriggerEnter(Collider other)
         {
+            if (other.CompareTag("Player"))
+            {
+                DebugLogger.Log("Collectible", $"Player has been detected. Collecting {typeof(T).Name} now.");
+                BaseCollect();
+            }
+        }
 
+        private void BaseCollect()
+        {
+            TData data = Collect();
+            DebugLogger.Log("Collectible", $"Data has been sourced from {typeof(T).Name}, invoking event now.");
+            Destroy(gameObject);
+        }
+
+        protected abstract TData Collect();
+
+        private void InitSphereCollider()
+        {
+            if (sphereCollider == null)
+            {
+                sphereCollider = GetComponent<SphereCollider>();
+            }
+
+            sphereCollider.radius = collisionRadius;
+            sphereCollider.isTrigger = true;
         }
     }
 }

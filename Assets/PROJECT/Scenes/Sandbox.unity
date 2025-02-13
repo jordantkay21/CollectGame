@@ -583,6 +583,8 @@ GameObject:
   - component: {fileID: 407593402}
   - component: {fileID: 407593401}
   - component: {fileID: 407593400}
+  - component: {fileID: 407593404}
+  - component: {fileID: 407593403}
   m_Layer: 31
   m_Name: KeyCard
   m_TagString: Untagged
@@ -681,6 +683,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407593398}
   m_Mesh: {fileID: 4300000, guid: 09d8bdb2477b8c04f87c3f5d1d04a55f, type: 3}
+--- !u!114 &407593403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407593398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b4578b6ded0cd4caaad27b943ec993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionRadius: 0.75
+--- !u!135 &407593404
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407593398}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.75
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0

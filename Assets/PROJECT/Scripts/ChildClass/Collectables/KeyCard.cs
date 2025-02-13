@@ -2,18 +2,12 @@ using UnityEngine;
 
 namespace KayosStudios.TBD.Inventory.Collectible
 {
-    public class KeyCard : MonoBehaviour
+    public class KeyCard : Collectible<KeyCard, object>
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        protected override object Collect()
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            DebugLogger.Log("KeyCard", $"Collected a new key card!");
+            return null;
         }
     }
 }
