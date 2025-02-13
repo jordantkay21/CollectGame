@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 331428615}
   - component: {fileID: 331428614}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Step One
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1166,7 +1166,7 @@ GameObject:
   - component: {fileID: 757891463}
   - component: {fileID: 757891462}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Step Two
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1336,7 +1336,7 @@ GameObject:
   - component: {fileID: 799996562}
   - component: {fileID: 799996561}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Step Three
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5081,7 +5081,7 @@ GameObject:
   - component: {fileID: 8249105655557207603}
   - component: {fileID: 8273002402062757335}
   m_Layer: 0
-  m_Name: Spawner_PlatformerSpawner
+  m_Name: Spawner_PlatformSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

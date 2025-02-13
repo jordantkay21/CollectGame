@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c3e7ec8ba5f24a47a848edfdf1d2346, type: 3}
-  m_Name: PlayerInput
+  m_Name: DoorTerminal
   m_EditorClassIdentifier: 
-  tagName: PlayerInput
+  tagName: DoorTerminal
   isEnabled: 1
-  tagColor: {r: 0.6380375, g: 0.43952474, b: 0.7830189, a: 1}
+  tagColor: {r: 0.4, g: 0.65882355, b: 1, a: 1}
