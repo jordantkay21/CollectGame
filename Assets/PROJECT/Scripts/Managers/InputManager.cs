@@ -5,7 +5,7 @@ namespace KayosStudios.TBD.Player.Inputs
 {
     public class InputManager : MonoBehaviour
     {
-        [SerializeField] KeyCode interactKey = KeyCode.E;
+        public static KeyCode interactKey = KeyCode.E;
 
         public static event Action OnInteractPressed;
 

@@ -2,7 +2,7 @@ using KayosStudios.TBD.Player.Inputs;
 using System;
 using UnityEngine;
 
-namespace KayosManager.TBD.Interactions
+namespace KayosStudios.TBD.Interactables
 {
     public interface IInteractable
     {
@@ -16,7 +16,8 @@ namespace KayosManager.TBD.Interactions
 
         private IInteractable currentInteractable;
 
-        public static event Action<bool> OnInteractionAvailable;
+        public static event Action OnInteractionEnter;
+        public static event Action OnInteractionExit;
 
         private void OnEnable()
         {
@@ -62,7 +63,7 @@ namespace KayosManager.TBD.Interactions
                     if (currentInteractable == interactable) return;
 
                     currentInteractable = interactable;
-                    OnInteractionAvailable?.Invoke(true);
+                    OnInteractionEnter?.Invoke();
                     DebugLogger.Log("Interactions", "Interactable Object is in player's sight and is in range!", DebugLevel.Verbose);
                     return;
                 }
@@ -70,9 +71,13 @@ namespace KayosManager.TBD.Interactions
                 if(currentInteractable != null)
                 {
                     currentInteractable = null;
-                    OnInteractionAvailable?.Invoke(false);
-                    DebugLogger.Log("Interactions", "No interactable objects found in range!", DebugLevel.Verbose);
                 }
+            }
+            else
+            {
+                currentInteractable = null;
+                DebugLogger.Log("Interactions", "No interactable objects found in range!", DebugLevel.Verbose);
+                OnInteractionExit?.Invoke();
             }
         }
 

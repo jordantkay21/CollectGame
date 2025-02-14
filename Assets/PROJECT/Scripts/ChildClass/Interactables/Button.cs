@@ -1,4 +1,6 @@
-using KayosManager.TBD.Interactions;
+
+using KayosStudios.TBD.Interactables;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 

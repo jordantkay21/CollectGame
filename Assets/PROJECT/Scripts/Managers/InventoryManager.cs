@@ -1,3 +1,4 @@
+using KayosStudios.TBD.Interactables.Transac;
 using KayosStudios.TBD.Inventory.Collectible;
 using System;
 using System.Collections.Generic;
@@ -42,7 +43,9 @@ namespace KayosStudios.TBD.Inventory
         private void OnEnable()
         {
             KeyCard.OnCollection += (_) => ModifyItemCount(ItemType.Keycard, 1);
+            Transactionible.HasEnoughItems += CheckInventory;
         }
+
 
         private void OnDisable()
         {
@@ -66,6 +69,17 @@ namespace KayosStudios.TBD.Inventory
 
             OnInventoryChange?.Invoke(item, itemInventory[item]);
             DebugLogger.Log("Inventory", $"Inventory Updated: {item} = {itemInventory[item]}");
+        }
+        private bool CheckInventory(ItemType item, int amount)
+        {
+            if (itemInventory[item] >= amount)
+            {
+                DebugLogger.Log("Inventory", $"Player has enough for the transaction.");
+                return true;
+            }
+
+            DebugLogger.Log("Inventory", $"Player does not have {amount} {item}(s) needed for the transaction.");
+            return false;
         }
     }
 }
