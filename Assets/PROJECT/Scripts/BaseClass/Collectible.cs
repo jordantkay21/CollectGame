@@ -1,13 +1,15 @@
+using KayosStudios.TBD.Spawnable;
 using UnityEngine;
 
 namespace KayosStudios.TBD.Inventory.Collectible
 {
     [RequireComponent(typeof(SphereCollider))]
-    public abstract class Collectible<T,TData> : MonoBehaviour where T : Collectible<T, TData>
+    public abstract class Collectible<T,TData> : MonoBehaviour, ISpawnable where T : Collectible<T, TData>
     {
         [SerializeField] float collisionRadius;
         protected SphereCollider sphereCollider;
 
+        public abstract void OnSpawn();
 
 
         protected virtual void Awake()
@@ -23,6 +25,7 @@ namespace KayosStudios.TBD.Inventory.Collectible
                 BaseCollect();
             }
         }
+
 
         private void BaseCollect()
         {
@@ -43,5 +46,7 @@ namespace KayosStudios.TBD.Inventory.Collectible
             sphereCollider.radius = collisionRadius;
             sphereCollider.isTrigger = true;
         }
+
+
     }
 }

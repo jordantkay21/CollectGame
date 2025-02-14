@@ -1,19 +1,25 @@
+using KayosStudios.TBD.Inventory.Collectible;
 using UnityEngine;
 
 namespace KayosStudios.TBD.Spawnable
 {
     public class PlatformSpawner : MonoBehaviour
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        [SerializeField] Transform spawnPosition;
+        [SerializeField] GameObject spawnObj;
+
+        public void SpawnKey()
         {
+            if (spawnObj != null)
+            {
+                DebugLogger.Log("PlatformSpawner", $"Object already spawned");
+                return;
+            }
 
-        }
+            DebugLogger.Log("PlatformSpawner", $"Attempting to spawn Key");
 
-        // Update is called once per frame
-        void Update()
-        {
-
+            spawnObj = SpawnManager.Instance.Spawn<KeyCard>(spawnPosition.position,Quaternion.identity);
+            spawnObj.transform.parent = spawnPosition;
         }
     }
 }
