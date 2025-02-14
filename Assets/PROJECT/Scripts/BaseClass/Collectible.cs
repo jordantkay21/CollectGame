@@ -1,4 +1,5 @@
 using KayosStudios.TBD.Spawnable;
+using System;
 using UnityEngine;
 
 namespace KayosStudios.TBD.Inventory.Collectible
@@ -8,6 +9,8 @@ namespace KayosStudios.TBD.Inventory.Collectible
     {
         [SerializeField] float collisionRadius;
         protected SphereCollider sphereCollider;
+
+        public static event Action<TData> OnCollection;
 
         public abstract void OnSpawn();
 
@@ -31,6 +34,7 @@ namespace KayosStudios.TBD.Inventory.Collectible
         {
             TData data = Collect();
             DebugLogger.Log("Collectible", $"Data has been sourced from {typeof(T).Name}, invoking event now.");
+            OnCollection?.Invoke(data);
             Destroy(gameObject);
         }
 
