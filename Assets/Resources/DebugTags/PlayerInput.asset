@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerInput
   m_EditorClassIdentifier: 
   tagName: PlayerInput
-  isEnabled: 1
+  isEnabled: 0
   tagColor: {r: 0.74509805, g: 0.4, b: 1, a: 1}
