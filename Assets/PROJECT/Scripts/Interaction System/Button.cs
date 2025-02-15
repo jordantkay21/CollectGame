@@ -9,6 +9,8 @@ namespace KayosStudios.TBD.InteractionSystem.Object
 
         public override void Interact()
         {
+            base.Interact();
+
             DebugLogger.Log("Button", "Button Pressed!", DebugLevel.Verbose);
             OnButtonPress?.Invoke();
         }

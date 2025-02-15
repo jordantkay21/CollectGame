@@ -1,3 +1,4 @@
+using KayosStudios.TBD.InteractionSystem;
 using KayosStudios.TBD.InventorySystem.Item;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,21 @@ namespace KayosStudios.TBD.InventorySystem
         private void OnEnable()
         {
             Keycard.OnCollection += (_) => ModifyItemCount(ItemType.Keycard, 1);
+            Interactable.CanAfford += CheckInventory;
+        }
+
+        private bool CheckInventory(ItemType item, int amount)
+        {
+            if (itemInventory[item] >= amount)
+            {
+                DebugLogger.Log("InventoryManager", $"Player has enough for the proposed transaction");
+                return true;
+            }
+            else
+            {
+                DebugLogger.Log("InventoryManager", $"Player does not have the {amount} {item}(s) needed for the proposed transaction.");
+                return false;
+            }
         }
 
         private void OnDisable()

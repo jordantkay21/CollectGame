@@ -1,19 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace KayosStudios.TBD.InteractionSystem.Object
 {
-    public class Terminal : MonoBehaviour
+    public class Terminal : Interactable
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
+        public UnityEvent OnTerminalAccess;
 
-        }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }

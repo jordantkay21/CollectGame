@@ -10,11 +10,19 @@ public class UIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        InteractionManager.OnInteractionEnter += (string message) =>
-        {
-            displayMessagePanel.SetActive(true);
-            displayMessageText.text = message;
-        };
-        InteractionManager.OnInteractionExit += () => { displayMessagePanel.SetActive(false); };
+        InteractionManager.OnInteractionEnter += () => EnableDisplayMessage(true);
+        InteractionManager.OnInteractionExit += () => EnableDisplayMessage(false);
+
+        Interactable.SendDisplayMessage += SetDisplayMessage;
+    }
+
+    private void EnableDisplayMessage(bool isActive)
+    {
+        displayMessagePanel.SetActive(isActive);
+    }
+
+    private void SetDisplayMessage(string message)
+    {
+        displayMessageText.text = message;
     }
 }
