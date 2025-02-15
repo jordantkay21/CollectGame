@@ -11,7 +11,7 @@ namespace KayosStudios.TBD.InteractionSystem
         [SerializeField] protected string actionToExecute;
         [SerializeField] protected bool canAfford;
 
-        private string displayMessage;
+        protected string displayMessage;
         public static event Action<string> SendDisplayMessage;
 
 
@@ -19,6 +19,8 @@ namespace KayosStudios.TBD.InteractionSystem
         [SerializeField] protected bool isTransactional;
         [SerializeField] protected ItemType requiredItem;
         [SerializeField] protected int requiredAmount;
+
+        public static event Action<ItemType, int> OnTransactionInitiation;
 
         public static Func<ItemType, int, bool> CanAfford;
         
@@ -31,8 +33,15 @@ namespace KayosStudios.TBD.InteractionSystem
 
         public virtual void Interact()
         {
+            if (!isTransactional) canAfford = true;
             if (!canAfford) return;
+
+            if(isTransactional && canAfford)
+            {
+                OnTransactionInitiation(requiredItem, -requiredAmount);
+            }
         }
+        protected abstract string GetDisplayMessage();
         
         private void OnEnable()
         {
@@ -48,21 +57,8 @@ namespace KayosStudios.TBD.InteractionSystem
             }
         }
 
-        private string GetDisplayMessage()
-        {
-            if (!isTransactional)
-            {
-                canAfford = true;
-                displayMessage = $"Press {InputManager.interactKey} to {actionToExecute}";
-                return displayMessage;
-            }
-            else
-            {
-                return CheckTransaction();
-            }
-        }
 
-        private string CheckTransaction()
+        protected string CheckTransaction()
         {
             if(CanAfford != null)
             {

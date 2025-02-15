@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: InteractionManager
   m_EditorClassIdentifier: 
   tagName: InteractionManager
-  isEnabled: 0
+  isEnabled: 1
   tagColor: {r: 0.65882355, g: 1, b: 0.4, a: 1}

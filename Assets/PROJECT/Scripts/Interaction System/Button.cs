@@ -1,3 +1,4 @@
+using KayosStudios.TBD.InputLogic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,5 +16,11 @@ namespace KayosStudios.TBD.InteractionSystem.Object
             OnButtonPress?.Invoke();
         }
 
+        protected override string GetDisplayMessage()
+        {
+            displayMessage = $"Press {InputManager.interactKey} to {actionToExecute}";
+            return displayMessage;
+
+        }
     }
 }

@@ -515,11 +515,45 @@ Transform:
   - {fileID: 1186942737}
   m_Father: {fileID: 543333781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &476041402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9103047429968910549, guid: 1b99b4d97c3ec6d4aa3bdbeab2d5c74e, type: 3}
+  m_PrefabInstance: {fileID: 6718476630564063388}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &476041403 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3976472910642262475, guid: 1b99b4d97c3ec6d4aa3bdbeab2d5c74e, type: 3}
+  m_PrefabInstance: {fileID: 6718476630564063388}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &476041404 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8053592046558700039, guid: 1b99b4d97c3ec6d4aa3bdbeab2d5c74e, type: 3}
   m_PrefabInstance: {fileID: 6718476630564063388}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &476041407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476041402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cbd36a5b74371f44b02b62e6445b77d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionToExecute: 
+  canAfford: 0
+  isTransactional: 0
+  requiredItem: 0
+  requiredAmount: 0
+  givesItemInReturn: 0
+  itemToGive: 0
+  amountToGive: 0
+  isLocked: 1
+  isOpen: 0
+  anim: {fileID: 476041403}
+  lockIcon: {fileID: 824393097}
 --- !u!1 &499428658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,6 +1226,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799996559}
   m_CullTransparentMesh: 1
+--- !u!1 &824393097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5896905020011389033, guid: 1b99b4d97c3ec6d4aa3bdbeab2d5c74e, type: 3}
+  m_PrefabInstance: {fileID: 6718476630564063388}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3377,6 +3416,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &5741828031634311157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6516866285348334111, guid: 599897c43de687c4288c6a617fbfd28b, type: 3}
+  m_PrefabInstance: {fileID: 8033699325718760594}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5756449005499068207
 Transform:
   m_ObjectHideFlags: 0
@@ -3728,7 +3772,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9103047429968910549, guid: 1b99b4d97c3ec6d4aa3bdbeab2d5c74e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 476041407}
   m_SourcePrefab: {fileID: 100100000, guid: 1b99b4d97c3ec6d4aa3bdbeab2d5c74e, type: 3}
 --- !u!114 &6721040380842896627
 MonoBehaviour:
@@ -4261,7 +4308,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6516866285348334111, guid: 599897c43de687c4288c6a617fbfd28b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8759700668452367561}
   m_SourcePrefab: {fileID: 100100000, guid: 599897c43de687c4288c6a617fbfd28b, type: 3}
 --- !u!4 &8039070913187697408
 Transform:
@@ -4484,6 +4534,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionToExecute: Spawn Keycard
+  canAfford: 0
+  isTransactional: 0
+  requiredItem: 0
+  requiredAmount: 0
+  givesItemInReturn: 0
+  itemToGive: 0
+  amountToGive: 0
   OnButtonPress:
     m_PersistentCalls:
       m_Calls:
@@ -4515,6 +4572,42 @@ Transform:
   - {fileID: 4980063470299117939}
   m_Father: {fileID: 3812368360960456584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8759700668452367561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5741828031634311157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e3a527e0f0d6584b80f3faae5f92072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionToExecute: Unlock Door
+  canAfford: 0
+  isTransactional: 1
+  requiredItem: 0
+  requiredAmount: 1
+  givesItemInReturn: 0
+  itemToGive: 0
+  amountToGive: 0
+  OnTerminalAccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 476041407}
+        m_TargetAssemblyTypeName: KayosStudios.TBD.InteractionSystem.Object.Door,
+          Assembly-CSharp
+        m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8767250657902546934
 GameObject:
   m_ObjectHideFlags: 0

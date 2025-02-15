@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Collectible
   m_EditorClassIdentifier: 
   tagName: Collectible
-  isEnabled: 0
+  isEnabled: 1
   tagColor: {r: 0.4, g: 0.65882355, b: 1, a: 1}

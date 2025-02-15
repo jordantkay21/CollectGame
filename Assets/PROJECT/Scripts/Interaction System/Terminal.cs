@@ -14,5 +14,10 @@ namespace KayosStudios.TBD.InteractionSystem.Object
             DebugLogger.Log("Terminal", "Terminal Accessed!", DebugLevel.Verbose);
             OnTerminalAccess?.Invoke();
         }
+
+        protected override string GetDisplayMessage()
+        {
+            return CheckTransaction();
+        }
     }
 }

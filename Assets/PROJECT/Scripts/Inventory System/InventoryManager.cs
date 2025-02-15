@@ -31,6 +31,7 @@ namespace KayosStudios.TBD.InventorySystem
         private void OnEnable()
         {
             Keycard.OnCollection += (_) => ModifyItemCount(ItemType.Keycard, 1);
+            Interactable.OnTransactionInitiation += (item, amount) => ModifyItemCount(item, amount);
             Interactable.CanAfford += CheckInventory;
         }
 
