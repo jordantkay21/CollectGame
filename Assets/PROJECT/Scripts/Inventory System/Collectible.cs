@@ -1,10 +1,11 @@
+using KayosStudios.TBD.SpawnSystem;
 using System;
 using UnityEngine;
 
 namespace KayosStudios.TBD.CollectibleLogic
 {
     [RequireComponent(typeof(SphereCollider))]
-    public abstract class Collectible<T,TData> : MonoBehaviour where T : Collectible<T,TData>
+    public abstract class Collectible<T,TData> : MonoBehaviour, ISpawnable where T : Collectible<T,TData>
     {
         [SerializeField] float collisionRadius;
 
