@@ -803,6 +803,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 578200945}
+  - component: {fileID: 578200946}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -825,6 +826,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1972829675}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &578200946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578200944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cffde16c62b8cc42b5bec13c3ebfe1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnablePrefabs:
+  - {fileID: 4199011557875986563, guid: 0da0181a05a44f1419424281266b1668, type: 3}
 --- !u!1 &757891460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,6 +1241,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 781857105}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1030947309 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8706297733429623944, guid: 6ccf82b60306f844eb9d410307eb928c, type: 3}
+  m_PrefabInstance: {fileID: 2339120633862062197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1092180142
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,7 +2670,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5949724360892903629, guid: 6ccf82b60306f844eb9d410307eb928c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8273002402062757336}
   m_SourcePrefab: {fileID: 100100000, guid: 6ccf82b60306f844eb9d410307eb928c, type: 3}
 --- !u!1 &2392668341819997327
 GameObject:
@@ -3460,6 +3483,7 @@ GameObject:
   - component: {fileID: 7790563198189627187}
   - component: {fileID: 7790563198189627189}
   - component: {fileID: 7790563198189627188}
+  - component: {fileID: 7790563198189627190}
   m_Layer: 0
   m_Name: PF_Player
   m_TagString: Player
@@ -4137,6 +4161,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2147483648
   currentInteractable: {fileID: 0}
+--- !u!114 &7790563198189627190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6064801526167040612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0763418155245543aca8ca1812d1c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingKeycards: 0
 --- !u!4 &7815358798366801545
 Transform:
   m_ObjectHideFlags: 0
@@ -4294,11 +4331,30 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &8227950378381993657 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5949724360892903629, guid: 6ccf82b60306f844eb9d410307eb928c, type: 3}
+  m_PrefabInstance: {fileID: 2339120633862062197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8230733135654604523 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1417351743672056526, guid: 6ccf82b60306f844eb9d410307eb928c, type: 3}
   m_PrefabInstance: {fileID: 2339120633862062197}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8273002402062757336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227950378381993657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65f8c9f233031542ada3068692a1b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnType: 1
+  spawnPosition: {fileID: 1030947309}
 --- !u!4 &8341775351527483899
 Transform:
   m_ObjectHideFlags: 0
@@ -4428,6 +4484,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionToExecute: Spawn Keycard
+  OnButtonPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8273002402062757336}
+        m_TargetAssemblyTypeName: KayosStudios.TBD.SpawnSystem.SpawnablePoint, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &8742381296271328200
 Transform:
   m_ObjectHideFlags: 0
