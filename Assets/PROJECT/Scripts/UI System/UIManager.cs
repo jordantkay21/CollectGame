@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        InteractionManager.OnInteractionEnter += () => EnableDisplayMessage(true);
+        InteractionManager.OnInteractionEnter += (interactable) => EnableDisplayMessage(true);
         InteractionManager.OnInteractionExit += () => EnableDisplayMessage(false);
 
         Interactable.SendDisplayMessage += SetDisplayMessage;

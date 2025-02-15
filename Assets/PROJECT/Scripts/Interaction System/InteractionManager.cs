@@ -12,7 +12,7 @@ namespace KayosStudios.TBD.InteractionSystem
 
         [SerializeField] Interactable currentInteractable;
 
-        public static event Action OnInteractionEnter;
+        public static event Action<Interactable> OnInteractionEnter;
         public static event Action OnInteractionExit;
 
         private void OnEnable()
@@ -64,7 +64,7 @@ namespace KayosStudios.TBD.InteractionSystem
                     canInteract = true;
                     currentInteractable = interactable;
                     DebugLogger.Log("InteractionManager", "Interactable Object is in player's sight!");
-                    OnInteractionEnter?.Invoke();
+                    OnInteractionEnter?.Invoke(interactable);
                 }
             }
             else

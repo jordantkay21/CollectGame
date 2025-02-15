@@ -8,25 +8,25 @@ namespace KayosStudios.TBD.InteractionSystem
     public abstract class Interactable : MonoBehaviour
     {
         [Header("Interactable Settings")]
-        [SerializeField] string actionToExecute;
-        [SerializeField] bool canAfford;
+        [SerializeField] protected string actionToExecute;
+        [SerializeField] protected bool canAfford;
 
         private string displayMessage;
         public static event Action<string> SendDisplayMessage;
 
 
         [Header("Transactional Interactable Settings")]
-        [SerializeField] bool isTransactional;
-        [SerializeField] ItemType requiredItem;
-        [SerializeField] int requiredAmount;
+        [SerializeField] protected bool isTransactional;
+        [SerializeField] protected ItemType requiredItem;
+        [SerializeField] protected int requiredAmount;
 
         public static Func<ItemType, int, bool> CanAfford;
         
 
         [Header("Trade Interactable Settings")]
-        [SerializeField] bool givesItemInReturn;
-        [SerializeField] ItemType itemToGive;
-        [SerializeField] int amountToGive;
+        [SerializeField] protected bool givesItemInReturn;
+        [SerializeField] protected ItemType itemToGive;
+        [SerializeField] protected int amountToGive;
 
 
         public virtual void Interact()
@@ -36,8 +36,16 @@ namespace KayosStudios.TBD.InteractionSystem
         
         private void OnEnable()
         {
-            InteractionManager.OnInteractionEnter += () => SendDisplayMessage?.Invoke(GetDisplayMessage());
+            InteractionManager.OnInteractionEnter += HandleInteractionEnter;
 
+        }
+
+        private void HandleInteractionEnter(Interactable interactable)
+        {
+            if (interactable == this)
+            {
+                SendDisplayMessage?.Invoke(GetDisplayMessage());
+            }
         }
 
         private string GetDisplayMessage()

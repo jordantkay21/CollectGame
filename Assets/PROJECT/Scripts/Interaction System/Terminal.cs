@@ -7,6 +7,12 @@ namespace KayosStudios.TBD.InteractionSystem.Object
     {
         public UnityEvent OnTerminalAccess;
 
+        public override void Interact()
+        {
+            base.Interact();
 
+            DebugLogger.Log("Terminal", "Terminal Accessed!", DebugLevel.Verbose);
+            OnTerminalAccess?.Invoke();
+        }
     }
 }
