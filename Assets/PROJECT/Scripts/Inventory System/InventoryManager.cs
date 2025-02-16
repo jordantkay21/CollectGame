@@ -21,11 +21,11 @@ namespace KayosStudios.TBD.InventorySystem
 
         private Dictionary<ItemType, int> itemInventory = new Dictionary<ItemType, int>();
 
-        private static event Action<ItemType, int> OnInventoryChange;
+        public static event Action<ItemType, int> OnInventoryChange;
 
         private void Awake()
         {
-            itemInventory[ItemType.Keycard] = startingKeycards;
+            ModifyItemCount(ItemType.Keycard, startingKeycards);
         }
 
         private void OnEnable()
