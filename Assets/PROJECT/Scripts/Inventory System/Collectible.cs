@@ -27,7 +27,7 @@ namespace KayosStudios.TBD.CollectibleLogic
         {
             if (other.CompareTag("Player"))
             {
-                DebugLogger.Log("Colelctible", $"Player has been detected. Collecting {typeof(T).Name} now.");
+                DebugLogger.Log("Collectible", $"Player has been detected. Collecting {typeof(T).Name} now.");
                 BaseCollect();
             }
         }

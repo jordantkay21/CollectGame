@@ -160,12 +160,34 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: KeyCardIcon_0
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 640
+        width: 1536
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40d380b4fad6755438758854e3c3c1aa
+      internalID: -1971363310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3dea425963fd98b4ea9d9c1739519e4d
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +196,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      KeyCardIcon_0: -1971363310
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
